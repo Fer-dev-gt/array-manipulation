@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Elementos generados usando el método ".map()"</h1>
+  <div id="app"></div>
+  <script>
+    const products = [
+      {title: 'Burguer', price: 121},
+      {title: 'Pizza', price: 20}
+    ];
+    const app = document.getElementById('app');
+    const list = products.map(product => {
+      return `<li>${product.title} - $${product.price}</li>`
+    })
+    app.innerHTML = list.join('')                       // Guardamos el Array con lo que se va a reenderizar transformado en un String al usar el método '.join()'
+  </script>
+</body>
+</html>
