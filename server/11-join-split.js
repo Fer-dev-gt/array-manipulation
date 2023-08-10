@@ -52,3 +52,8 @@ console.log('URL without any tilde: ', urlFinalNoAccent);
 export function parseToURL(title) {
   return title.split(' ').join('-').toLowerCase();
 }
+
+// También se puede resolver el reto usando solo el método '.replaceAll()' y mandando el caracter a cambier y que lo va a reemplazar
+export function parseToURL(title) {
+  return title.replaceAll(" ", "-").toLowerCase();
+}; 
