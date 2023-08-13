@@ -38,20 +38,16 @@ console.log('Using ".flat()" method with Infinite levels ', flatedArrayLevelsInf
 
 
 // Solucionando el reto de hacer 'Flat' usando 'Recursión' (Bueno para entrevistas de trabajo)
-function profundidad(list) {
-  let newList = [];
-  if (typeof list != "object") return [list];
-  list.forEach(element => {
-    newList = newList.concat(profundidad(element));                       //Aqui es donde aplicamos la recursividad
+function profundidad(matrixArray) {
+  let newArray = [];
+  if (typeof matrixArray != "object") return [matrixArray];                 // Si 'matrixArray' no es Array u Object osea un número o string regresa ese valor
+
+  matrixArray.forEach(element => {                                          // Si 'matrixArray' si es un Array iteramos en cada uno de sus elementos con un 'forEach()'
+    newArray = newArray.concat(profundidad(element));                       //Aqui es donde aplicamos la recursividad que nos devolvera los elementos a un nivel mas interno de la matriz, concatena esos valores y los guarda en nuestro Array aplanado
   });
-  return newList;
+
+  return newArray;                                                          // Regresamos el Array modificado con los valores aplanados fuera de su Array anidado
 }
 
 const newArrayRecursividad = profundidad(matrix);
 console.log('Flatted array with recursividad: ' ,newArrayRecursividad);
-
-
-
-// Otra solucion mas corta de hacer Flat a los elementos del Array
-const flatten = (arr) => arr.reduce((acc, el) => acc.concat(el), []);
-console.log('Flat with ".reduce" method', flatten);
