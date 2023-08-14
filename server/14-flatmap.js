@@ -57,3 +57,9 @@ console.log('Array with all StartDates:', startDateArray);
 // Otra forma de soluciona el reto sin usar '.flatmap'
 const rtaReto = Object.values(calendars).flat().map(item => item.startDate);
 console.log(rtaReto);
+
+
+// Solución al reto de Playgrounds
+export function countWords(array) {
+  return array.flatMap(sentence => sentence.split(' ')).length
+}
